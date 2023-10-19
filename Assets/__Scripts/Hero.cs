@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
-using UnityEngine.UI;
+
 
 public class Hero : MonoBehaviour {
     static public Hero S; // Singleton
@@ -16,8 +16,8 @@ public class Hero : MonoBehaviour {
     public GameObject projectilePrefab;
     public float projectileSpeed = 40;
     public Weapon[] weapons;
-    public Text Lives;
-    private int count;
+    
+   
 
     [Header("Set Dynamically")]
     [SerializeField]
@@ -46,8 +46,8 @@ public class Hero : MonoBehaviour {
         // Reset the weapons to start _Hero with 1 blaster
         ClearWeapons();
         weapons[0].SetType(WeaponType.blaster);
-        count = 3;
-        SetLivesText();
+        
+        
     }
 	
 	// Update is called once per frame
@@ -149,8 +149,7 @@ public class Hero : MonoBehaviour {
             if (value < 0)
             {
                 Destroy(this.gameObject);
-                count = count - 1;
-                SetLivesText();
+                
             
                 // Tell Main.S to restart the game after a delay
                 Main.S.DelayedRestart(gameRestartDelay);
@@ -160,10 +159,7 @@ public class Hero : MonoBehaviour {
     }
 
     
-    void SetLivesText ()
-    {
-        Lives.text = "Lives: " + count.ToString();
-    }
+    
     Weapon GetEmptyWeaponSlot()
     {
         for (int i=0; i<weapons.Length; i++)
