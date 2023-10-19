@@ -49,6 +49,8 @@ public class Enemy_3 : Enemy { // Enemy_3 extends Enemy
         {
             // This Enemy_3 has finished its life
             Destroy(this.gameObject);
+            // Update UI
+            ScoreManager.Instance.AddPoint();
             return;
         }
 

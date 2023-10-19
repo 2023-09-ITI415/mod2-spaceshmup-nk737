@@ -195,6 +195,8 @@ public class Enemy_4 : Enemy {
                     Main.S.ShipDestroyed(this);
                     // Destroy this Enemy
                     Destroy(this.gameObject);
+                    // Update UI
+                    ScoreManager.Instance.AddPoint();
                 }
                 Destroy(other); // Destroy the ProjectileHero
                 break;

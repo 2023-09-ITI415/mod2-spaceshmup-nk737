@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Enemy_2 : Enemy {
 
     [Header("Set in Inspector: Enemy_2")]
@@ -50,6 +51,8 @@ public class Enemy_2 : Enemy {
         {
             // This Enemy_2 has finished its life
             Destroy(this.gameObject);
+            // Update UI
+            ScoreManager.Instance.AddPoint();
             return;
         }
 
@@ -59,4 +62,5 @@ public class Enemy_2 : Enemy {
         // Interpolate the two linear interpolation points
         pos = ((1 - u) * p0) + (u * p1);
     }
+    
 }
