@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,8 +18,9 @@ public class ScoreManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        highscore = PlayerPrefs.GetInt("highscore", 0);
         scoreText.text = score.ToString()+"  Points";
-        highscoreText.text = "High Score: " + highscore.ToString();
+        highscoreText.text = "HighScore: " + highscore.ToString();
     }
 
     public void AddPoint()
@@ -29,10 +29,7 @@ public class ScoreManager : MonoBehaviour
         scoreText.text = score.ToString() + "  Points";
         if (highscore < score)
             PlayerPrefs.SetInt("highscore", score);
-    }
-    // Update is called once per frame
-    void Update()
-    {
+   
         
     }
 }
