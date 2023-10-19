@@ -4,6 +4,7 @@ using System.Threading;
 using UnityEngine;
 
 
+
 public class Hero : MonoBehaviour {
     static public Hero S; // Singleton
 
