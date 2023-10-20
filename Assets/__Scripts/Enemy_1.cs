@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
-using UnityEngine.UI;
+
 
 // Enemy_1 extends the Enemy class
 public class Enemy_1 : Enemy {
